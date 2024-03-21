@@ -1,9 +1,10 @@
 
-###  DATE: 
+###  DATE: 21/03/2024 
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT:
+###  NAME: SRIKAAVYAA T
+
+###  ROLL NO : 212223230214
+###  DEPARTMENT: BTECH AIDS
 # Experiment-no-6-DC-Motor-Speed-Control-Using-Arduino
 ### AIM : To control the speed and the direction of a DC motor using L293D driver ic( H- bridge)
 
@@ -31,14 +32,47 @@ TABLE-01 EXITATION TABLE FOR H BRIDGE
 
 As shown in the circuit diagram we need only 3 Arduino terminal pins, pin 8 is for the push button which toggles the motor direction of rotation. Pins 9 and 10 are PWM signal outputs, at any time there is only 1 active PWM, this allows us to control the direction as well as the speed by varying the duty cycle of the PWM signal. The active PWM pin decides the motor direction of rotation (one at a time, the other output is logic 0).
 
-### PRGORAM 
+### PROGRAM 
+```
+int enable=6;
+int input1=3;
+int input2=4;
+
+void setup()
+{
+  pinMode(enable, OUTPUT);
+    pinMode(input1, OUTPUT);
+    pinMode(input2, OUTPUT);
+}
+
+void loop()
+{
+  analogWrite(enable, 50);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(input1, HIGH);
+   digitalWrite(input2, LOW);
+  delay(5000); 
+   digitalWrite(input1, LOW);
+   digitalWrite(input2, HIGH);
+  delay(5000); 
+}
+```
 
 ### OUTPUT
+![Screenshot 2024-03-21 113904](https://github.com/Srikaavyaathamizh/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144870938/165e204d-a561-4778-b742-d37be6da2ecb)
+
+## FIGURE 2
+ ![Screenshot 2024-03-21 113959](https://github.com/Srikaavyaathamizh/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144870938/c6f74056-b3b7-4c88-8b98-9d991d550247)
+
 
 ### GRAPH AND TABULATION 
+![Screenshot 2024-03-21 113553](https://github.com/Srikaavyaathamizh/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144870938/2b9f7ca3-0d8f-4897-90b9-b03193f119bc)
+
+![Screenshot 2024-03-21 113605](https://github.com/Srikaavyaathamizh/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144870938/30a2df52-b8fd-4a24-a964-95a1842d114c)
 
 
 
 
 ### RESULTS AND DISCUSSION 
+
 
